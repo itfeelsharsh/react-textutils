@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar.js";
 function App() {
   return (
     <>
-    <Navbar title="" aboutText="About This App" />
+    <Navbar title="TextUtils" aboutText="About This App" />
     </>
   );
 }
