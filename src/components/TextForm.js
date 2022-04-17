@@ -22,6 +22,16 @@ export default function TextForm(props) {
         let newText = text.split("").reverse().join("");
         setText(newText)
     }  
+    const handleCopyClick = () => {
+        let text = document.getElementById("myBox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+        alert("Copied to clipboard");
+    }  
+    const handleExtraSpClick = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+    }
 
     const handleMeowClick = () => {
         let newText = text.split("").map(letter => {
@@ -105,15 +115,14 @@ export default function TextForm(props) {
         <h2>{props.heading}</h2> 
         <br/>
             <div className="mb-5">
-                  <textarea className="form-control bg-secondary  text-white" value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
+                  <textarea className="form-control bg-secondary  text-white" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
             </div>    
         <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to UPPERCASE</button>
         <button className="btn btn-success mx-2 my-1" onClick={handleLoClick}>Convert to lowercase</button>
-        <button className="btn btn-info mx-2 my-1" onClick={handleInvClick}>Reverce</button>
+        <button className="btn btn-info mx-2 my-1" onClick={handleInvClick}>Reverse</button>
         <button className="btn btn-secondary mx-2 my-1" onClick={handleMeowClick}>Word to Number</button>
-
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+        <button className="btn btn-primary mx-2 my-1" onClick={handleExtraSpClick}>Remove Extra Space</button>
+        <button className="btn btn-warning mx-2 my-1" onClick={handleCopyClick}>Copy</button>
         <button className="btn btn-danger mx-2 my-1" onClick={handleClearClick}>Clear</button>
     </div>        
 

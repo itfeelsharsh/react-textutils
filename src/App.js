@@ -1,7 +1,10 @@
 import Navbar from "./components/Navbar.js";
 import TextForm from "./components/TextForm.js";
 
+
 function App() {
+
+
   return (
     <>
     <div className="bg-dark text-white">
@@ -10,7 +13,7 @@ function App() {
     <Navbar title="TextUtils" aboutText="About This App" />
     
    <div className = "container my-5" >
-   <TextForm heading="Enter the text you want to utilize" />
+   <TextForm heading="Utilize your text" />
    </div>
 
    </div>
