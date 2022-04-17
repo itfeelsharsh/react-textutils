@@ -30,7 +30,7 @@ export default function Navbar(props) {
           <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable dark mode</label>
       </div>
      &nbsp;&nbsp;&nbsp;
-      <button class="btn btn-outline-success" onClick={() => openInNewTab('https://github.com/itfeelsharsh/react-textutils')}>GitHub</button>
+      <button className="btn btn-outline-success" onClick={() => openInNewTab('https://github.com/itfeelsharsh/react-textutils')}>GitHub</button>
     </div>
   </div>
 </nav>

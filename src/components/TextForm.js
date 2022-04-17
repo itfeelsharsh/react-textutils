@@ -26,7 +26,7 @@ export default function TextForm(props) {
         let text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
-        alert("Copied to clipboard");
+        props.showAlert("Copied to clipboard", "success");
     }  
     const handleExtraSpClick = () => {
         let newText = text.split(/[ ]+/);
@@ -100,7 +100,8 @@ export default function TextForm(props) {
             }
         }).join("")
         setText(newText)
-        alert(" ⚠️ Word to number only supports letters from A to Z in lowercase. ⚠️")
+        // alert(" ⚠️ Word to number only supports letters from A to Z in lowercase. ⚠️")
+        props.showAlert(" ⚠️ Word to number only supports letters from A to Z in lowercase. ⚠️", "warning");
     }  
 
     const handleOnChange = (event) => {
