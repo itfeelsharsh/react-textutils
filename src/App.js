@@ -26,11 +26,13 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = "#2C2F33";
       showAlert("Dark mode enabled", "success");
+      document.title = "React TextUtils - Dark Mode";
     }
     else{
       setMode('light');
       document.body.style.backgroundColor = "white";
       showAlert("Light mode enabled", "success");
+      document.title = "React TextUtils - Light Mode";
     } 
   }
   return (
