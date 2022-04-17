@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-let Link = "https://api.github.com/users/";
 
 export default function Navbar(props) {
   return (
@@ -21,7 +20,7 @@ export default function Navbar(props) {
         </li>
       </ul>
       <form className="d-flex">
-        <button className="btn btn-outline-success" component={Link} to="/dashboard" >GitHub</button>
+        <button className="btn btn-outline-success" >GitHub</button>
       </form>
     </div>
   </div>
