@@ -111,11 +111,11 @@ export default function TextForm(props) {
   const [text, setText] = useState('');
   return (
     <>
-    <div className = "container">
+    <div className = "container" style={{ color: props.mode==='dark'?'white':'black' }} >
         <h2>{props.heading}</h2> 
         <br/>
             <div className="mb-5">
-                  <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                  <textarea className="form-control" value={text} style={{ backgroundColor: props.mode==='dark'?'grey':'white' }} onChange={handleOnChange} id="myBox" rows="8"></textarea>
             </div>    
         <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to UPPERCASE</button>
         <button className="btn btn-success mx-2 my-1" onClick={handleLoClick}>Convert to lowercase</button>
@@ -126,7 +126,7 @@ export default function TextForm(props) {
         <button className="btn btn-danger mx-2 my-1" onClick={handleClearClick}>Clear</button>
     </div>        
 
-    <div className="container my-3 ">
+    <div className="container my-3" style={{ color: props.mode==='dark'?'white':'black' }}>
         <h3>Your text summary</h3>
         <p>
             "{text.split(" ").length}" words and "{text.length}" characters
