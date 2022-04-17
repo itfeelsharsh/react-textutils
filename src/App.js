@@ -4,7 +4,7 @@ import TextForm from "./components/TextForm.js";
 function App() {
   return (
     <>
-
+    <div className="bg-dark text-white">
 
 
     <Navbar title="TextUtils" aboutText="About This App" />
@@ -13,7 +13,7 @@ function App() {
    <TextForm heading="Enter the text you want to utilize" />
    </div>
 
-
+   </div>
     </>
   );
 }
