@@ -153,7 +153,7 @@ export default function TextForm(props) {
         </p>
 
         <p>
-        "{ 0.008 * text.split(" ").length }"" Minutes to read
+        "{ 0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length }"  Minutes to read
         </p>
 
     </div>
