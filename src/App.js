@@ -2,7 +2,12 @@ import Navbar from "./components/Navbar.js";
 import React, { useState } from 'react';
 import TextForm from "./components/TextForm.js";
 import Alert from "./components/Alert.js";
-// import About from "./components/About.js";
+import About from "./components/About.js";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -36,20 +41,31 @@ function App() {
     } 
   }
   return (
-    <>
 
+<>
 
     <Navbar title="TextUtils" aboutText="About This App" mode={mode} toggleMode={toggleMode} />
+
 
     <Alert alert={alert} />
     
    <div className = "container my-5" >
-   <TextForm heading="Utilize your text" mode={mode} showAlert={showAlert} />
 
-   {/* <About /> */}
+    <BrowserRouter>
+
+      <Routes>
+              <Route path="/" element={<TextForm showAlert={showAlert} heading="Edit your text below" toggleMode={toggleMode} mode={mode} />} />
+              <Route path="/about" element={<About />} mode={mode} />
+      </Routes>
+
+    </BrowserRouter>
+
+
    </div>
 
-    </>
+
+   </>  
+
   );
 }
 

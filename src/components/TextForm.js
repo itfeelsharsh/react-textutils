@@ -16,6 +16,7 @@ export default function TextForm(props) {
     const handleClearClick = () => {
         let newText = "";
         setText(newText)
+        props.showAlert("Text cleared", "success");
     }  
     
     const handleInvClick = () => {
@@ -31,7 +32,23 @@ export default function TextForm(props) {
     const handleExtraSpClick = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert("Extra spaces removed", "success");
     }
+
+    
+    const handleBhawClick = () => {
+        let newText = text.split("").map(function(letter){
+            if(letter === " "){
+                return "  ";
+            }
+            else{
+                return letter;
+            }
+        }
+        ).join("");
+        setText(newText);
+    }
+
 
     const handleMeowClick = () => {
         let newText = text.split("").map(letter => {
@@ -104,6 +121,7 @@ export default function TextForm(props) {
         props.showAlert(" ⚠️ Word to number only supports letters from A to Z in lowercase. ⚠️", "warning");
     }  
 
+
     const handleOnChange = (event) => {
         setText(event.target.value);
     }
@@ -116,21 +134,22 @@ export default function TextForm(props) {
         <h2>{props.heading}</h2> 
         <br/>
             <div className="mb-5">
-                  <textarea className="form-control" value={text} style={{ backgroundColor: props.mode==='dark'?'grey':'white' }} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                  <textarea className="form-control" value={text} style={{ backgroundColor: props.mode === 'dark'?'#52529e':'white' }} onChange={handleOnChange} id="myBox" rows="8"></textarea>
             </div>    
-        <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to UPPERCASE</button>
-        <button className="btn btn-success mx-2 my-1" onClick={handleLoClick}>Convert to lowercase</button>
-        <button className="btn btn-info mx-2 my-1" onClick={handleInvClick}>Reverse</button>
-        <button className="btn btn-secondary mx-2 my-1" onClick={handleMeowClick}>Word to Number</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleExtraSpClick}>Remove Extra Space</button>
-        <button className="btn btn-warning mx-2 my-1" onClick={handleCopyClick}>Copy</button>
-        <button className="btn btn-danger mx-2 my-1" onClick={handleClearClick}>Clear</button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to UPPERCASE</button>
+        <button className="btn btn-success mx-2 my-2" onClick={handleLoClick}>Convert to lowercase</button>
+        <button className="btn btn-info mx-2 my-2" onClick={handleInvClick}>Reverse</button>
+        <button className="btn btn-secondary mx-2 my-2" onClick={handleMeowClick}>Word to Number</button>
+        <button className="btn btn-warning mx-2 my-2" onClick={handleBhawClick}>Add Extra Space</button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpClick}>Remove Extra Space</button>
+        <button className="btn btn-warning mx-2 my-2" onClick={handleCopyClick}>Copy</button>
+        <button className="btn btn-danger mx-2 my-2" onClick={handleClearClick}>Clear</button>
     </div>        
 
     <div className="container my-3" style={{ color: props.mode==='dark'?'white':'black' }}>
         <h3>Your text summary</h3>
         <p>
-            "{text.split(" ").length}" words and "{text.length}" characters
+            "{text.split(" ").filter((element)=>{return element.length!==0}).length}" words and "{text.length}" characters
         </p>
 
         <p>
