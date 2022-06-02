@@ -9,6 +9,8 @@ import {
   Route
 } from "react-router-dom";
 
+  //export default App;
+
 
 function App() {
 
@@ -41,7 +43,7 @@ function App() {
   }
   return (
 
-<>
+<> 
 
     <Navbar title="TextUtils" aboutText="About This App" mode={mode} toggleMode={toggleMode} />
 
