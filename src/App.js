@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 
   //export default App;
+  //Data Flows from App.js to TextForm.js and Navbar.js to TextForm.js and Navbar.js to App.js.
 
 
 function App() {
