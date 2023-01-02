@@ -31,36 +31,16 @@ export default function Navbar(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/about">
-                  {props.aboutText}
-                </a>
-              </li>
+
+
             </ul>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div
               className={`form-check form-switch text-${
-                props.mode === "light" ? "dark" : "light"
+                props.mode === "dark" ? "white" : "dark"
               }`}
             >
-              <input
-                className="form-check-input"
-                onClick={props.toggleMode}
-                type="checkbox"
-                role="switch"
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label"
-                htmlFor="flexSwitchCheckDefault"
-              >
-                Enable dark mode
-              </label>
+
             </div>
             &nbsp;&nbsp;&nbsp;
             <br />
@@ -89,3 +69,6 @@ Navbar.defaultProps = {
   title: "Set Title here",
   aboutText: "Set About this app here",
 };
+
+
+

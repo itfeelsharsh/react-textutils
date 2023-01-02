@@ -9,7 +9,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Data Flows from App.js to TextForm.js and Navbar.js to TextForm.js and Navbar.js to App.js.
 
 function App() {
-  const [mode, setMode] = useState("light");
+
+  document.body.style.backgroundColor = "#2C2F33";
+  document.body.style.color = "#ffff";
 
   const [alert, setAlert] = useState(null);
 
@@ -23,24 +25,13 @@ function App() {
     }, 2000);
   };
 
-  const toggleMode = () => {
-    if (mode === "light") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#2C2F33";
-      showAlert("Dark mode enabled", "success");
-    } else {
-      setMode("light");
-      document.body.style.backgroundColor = "white";
-      showAlert("Light mode enabled", "success");
-    }
-  };
+
   return (
     <>
       <Navbar
         title="TextUtils"
         aboutText="About This App"
-        mode={mode}
-        toggleMode={toggleMode}
+
       />
 
       <Alert alert={alert} />
@@ -54,12 +45,11 @@ function App() {
                 <TextForm
                   showAlert={showAlert}
                   heading="Edit your text below"
-                  toggleMode={toggleMode}
-                  mode={mode}
+ 
                 />
               }
             />
-            <Route path="/about" element={<About />} mode={mode} />
+            <Route path="/about" element={<About />}/>
           </Routes>
         </BrowserRouter>
       </div>

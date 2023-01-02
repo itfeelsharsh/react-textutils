@@ -123,6 +123,130 @@ export default function TextForm(props) {
     );
   };
 
+  const handleA20NClick = () => {
+    let newText = text
+      .split("")
+      .filter(element => element.trim())
+      .map((letter) => {
+        if (letter === " ") {
+          return " ";
+        } else if (letter === "A") {
+          return "Alpha";
+        } else if (letter === "B") {
+          return "Bravo";
+        } else if (letter === "C") {
+          return "Charlie";
+        } else if (letter === "D") {
+          return "Delta";
+        } else if (letter === "E") {
+          return "Echo";
+        } else if (letter === "F") {
+          return "Foxtrot";
+        } else if (letter === "G") {
+          return "Golf";
+        } else if (letter === "H") {
+          return "Hotel";
+        } else if (letter === "I") {
+          return "India";
+        } else if (letter === "J") {
+          return "Juliet";
+        } else if (letter === "K") {
+          return "Kilo";
+        } else if (letter === "L") {
+          return "Lima";
+        } else if (letter === "M") {
+          return "Mike";
+        } else if (letter === "N") {
+          return " November";
+        } else if (letter === "O") {
+          return "Oscar";
+        } else if (letter === "P") {
+          return "Papa";
+        } else if (letter === "Q") {
+          return "Quebec";
+        } else if (letter === "R") {
+          return "Romeo";
+        } else if (letter === "S") {
+          return "Sierra";
+        } else if (letter === "T") {
+          return "Tango";
+        } else if (letter === "U") {
+          return "Uniform";
+        } else if (letter === "V") {
+          return "Victor";
+        } else if (letter === "W") {
+          return "Whiskey";
+        } else if (letter === "X") {
+          return "Xray";
+        } else if (letter === "Y") {
+          return "Yankee";
+        } else if (letter === "Z") {
+          return "Zulu";
+        }else if (letter === "a") {
+          return "Alpha";
+        } else if (letter === "b") {
+          return "Bravo";
+        } else if (letter === "c") {
+          return "Charlie";
+        } else if (letter === "d") {
+          return "Delta";
+        } else if (letter === "e") {
+          return "Echo";
+        } else if (letter === "f") {
+          return "Foxtrot";
+        } else if (letter === "g") {
+          return "Golf";
+        } else if (letter === "h") {
+          return "Hotel";
+        } else if (letter === "i") {
+          return "India";
+        } else if (letter === "j") {
+          return "Juliet";
+        } else if (letter === "k") {
+          return "Kilo";
+        } else if (letter === "l") {
+          return "Lima";
+        } else if (letter === "m") {
+          return "Mike";
+        } else if (letter === "n") {
+          return " November";
+        } else if (letter === "o") {
+          return "Oscar";
+        } else if (letter === "p") {
+          return "Papa";
+        } else if (letter === "q") {
+          return "Quebec";
+        } else if (letter === "r") {
+          return "Romeo";
+        } else if (letter === "s") {
+          return "Sierra";
+        } else if (letter === "t") {
+          return "Tango";
+        } else if (letter === "u") {
+          return "Uniform";
+        } else if (letter === "v") {
+          return "Victor";
+        } else if (letter === "w") {
+          return "Whiskey";
+        } else if (letter === "x") {
+          return "Xray";
+        } else if (letter === "y") {
+          return "Yankee";
+        } else if (letter === "z") {
+          return "Zulu";
+          
+        }
+        
+        else {
+          return letter;
+        }
+      })
+      .join(' ');
+      
+    setText(newText)
+  };
+  
+  
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
@@ -132,7 +256,7 @@ export default function TextForm(props) {
     <>
       <div
         className="container"
-        style={{ color: props.mode === "dark" ? "white" : "black" }}
+        style={{ color: props.mode === "dark" ? "white" : "white" }}
       >
         <h2>{props.heading}</h2>
         <br />
@@ -141,7 +265,9 @@ export default function TextForm(props) {
             className="form-control"
             value={text}
             style={{
-              backgroundColor: props.mode === "dark" ? "#52529e" : "white",
+              backgroundColor: "#526b59",
+              color: "white"
+              
             }}
             onChange={handleOnChange}
             id="myBox"
@@ -164,14 +290,14 @@ export default function TextForm(props) {
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-info mx-2 my-2"
+          className="btn btn-secondary mx-2 my-2"
           onClick={handleInvClick}
         >
           Reverse
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-secondary mx-2 my-2"
+          className="btn btn-info mx-2 my-2"
           onClick={handleMeowClick}
         >
           Word to Number
@@ -179,6 +305,14 @@ export default function TextForm(props) {
         <button
           disabled={text.length === 0}
           className="btn btn-warning mx-2 my-2"
+          onClick={handleA20NClick}
+        >
+          Phonetic Alphabet
+        </button>
+
+        <button
+          disabled={text.length === 0}
+          className="btn btn-success mx-2 my-2"
           onClick={handleBhawClick}
         >
           Add Extra Space
@@ -192,7 +326,7 @@ export default function TextForm(props) {
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-warning mx-2 my-2"
+          className="btn btn-secondary mx-2 my-2"
           onClick={handleCopyClick}
         >
           Copy
@@ -208,7 +342,7 @@ export default function TextForm(props) {
 
       <div
         className="container my-3"
-        style={{ color: props.mode === "dark" ? "white" : "black" }}
+        style={{ color: props.mode === "dark" ? "white" : "white" }}
       >
         <h3>Your text summary</h3>
         <p>

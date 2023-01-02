@@ -6,7 +6,7 @@ TextUtils is an amazing cool online web based text editor made with react.JS
 
 ## Features
 
-- Light/dark mode toggle
+- dark/dark mode toggle
 - Uppercase & lowercase the given sentence
 - Add or remove extra spaces
 - Word to number
